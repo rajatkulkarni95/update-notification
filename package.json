@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postmerge": "git-branch-is master && yarn bump-version-minor"
+    "push-version": "git add . && git commit -m 'Bumped version to $npm_package_version' && git push",
+    "postmerge": "yarn bump-version-minor && push-version"
   },
   "eslintConfig": {
     "extends": [
