@@ -1,6 +1,6 @@
 {
   "name": "update-notification",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -12,7 +12,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "postversion": "'{\"version\": \"%s\"}\n' $npm_package_version > public/build-version.json",
+    "postversion": "print '{\"version\": \"%s\"}\n' $npm_package_version > public/build-version.json",
     "bump-version-minor": "yarn version --new-version minor",
     "start": "react-scripts start",
     "build": "yarn bump-version-minor && react-scripts build",
