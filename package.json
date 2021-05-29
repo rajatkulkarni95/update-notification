@@ -12,7 +12,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "postversion": "'{\"version\": \"%s\"}\n' -f $npm_package_version > public/build-version.json",
+    "postversion": "printf '{\"version\": \"%s\"}\n' $npm_package_version > public/build-version.json",
     "bump-version-minor": "yarn version --new-version minor",
     "start": "react-scripts start",
     "build": "react-scripts build",
