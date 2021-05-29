@@ -1,6 +1,6 @@
 {
   "name": "update-notification",
-  "version": "0.1.0",
+  "version": "0.6.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -12,10 +12,13 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "postversion": "'{\"version\": \"%s\"}\n' -f $npm_package_version > public/build-version.json",
+    "bump-version-minor": "yarn version --new-version minor",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postmerge": "git-branch-is master && yarn bump-version-minor"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "git-branch-is": "^4.0.0",
+    "husky": "^6.0.0"
   }
 }
