@@ -2,6 +2,13 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  if (document.hasFocus()) {
+    console.log("focused");
+  }
+
+  if (document.visibilityState === "visible") {
+    console.log("visible");
+  }
   return (
     <div className="App">
       <header className="App-header">
